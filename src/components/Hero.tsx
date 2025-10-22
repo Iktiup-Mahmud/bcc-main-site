@@ -61,7 +61,7 @@ export default function Hero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border-2 border-green-200 px-5 py-2.5 rounded-full mb-8 shadow-lg glow-green"
           >
-            <Sparkles className="w-5 h-5 text-green-600 animate-pulse" />
+            <Sparkles className="w-5 h-5 text-[#34793B] animate-pulse" />
             <span className="text-sm font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               Welcome to Innovation Hub
             </span>
@@ -72,7 +72,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="block animated-gradient-text mb-2"
+              className="block animated-gradient-text mb-2 text-[#34793B]"
             >
               BAIUST
             </motion.span>

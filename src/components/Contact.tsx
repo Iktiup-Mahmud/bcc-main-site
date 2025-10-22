@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-emerald-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#014935]/5 via-white to-[#327a3b]/5" />
       <div className="absolute inset-0 dashed-pattern" />
 
       {/* Floating orbs */}
@@ -17,7 +17,7 @@ export default function Contact() {
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full blur-3xl"
+        className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-[#014935]/30 to-[#327a3b]/40 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -25,7 +25,7 @@ export default function Contact() {
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-teal-400 to-green-500 rounded-full blur-3xl"
+        className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-tl from-[#327a3b]/30 to-[#014935]/40 rounded-full blur-3xl"
       />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -41,7 +41,7 @@ export default function Contact() {
             transition={{ type: "spring", stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <span className="text-green-700 font-bold text-sm uppercase tracking-wider bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border-2 border-green-300">
+            <span className="text-[#014935] font-bold text-sm uppercase tracking-wider bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border-2 border-[#327a3b]/30">
               Let&apos;s Connect
             </span>
           </motion.div>
@@ -81,22 +81,27 @@ export default function Contact() {
               {
                 icon: Github,
                 label: "GitHub",
+                href: "https://github.com",
                 color: "from-gray-700 to-gray-900",
               },
               {
-                icon: Linkedin,
-                label: "LinkedIn",
-                color: "from-blue-600 to-blue-800",
+                icon: Facebook,
+                label: "Facebook",
+                href: "https://facebook.com",
+                color: "from-blue-600 to-blue-700",
               },
               {
-                icon: Twitter,
-                label: "Twitter",
-                color: "from-sky-500 to-blue-600",
+                icon: Instagram,
+                label: "Instagram",
+                href: "https://instagram.com",
+                color: "from-pink-500 to-purple-600",
               },
             ].map((social, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -104,6 +109,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.15, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative"
+                aria-label={social.label}
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${social.color} rounded-2xl flex items-center justify-center shadow-xl hover:shadow-2xl transition-all`}
