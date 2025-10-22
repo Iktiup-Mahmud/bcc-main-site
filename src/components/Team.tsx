@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users } from "lucide-react";
+import { Users, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -12,8 +14,8 @@ import {
 export default function Team() {
   return (
     <section id="team" className="py-24 px-4 bg-white relative overflow-hidden">
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-green-200 to-emerald-300 rounded-full blur-3xl opacity-20" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-teal-200 to-green-300 rounded-full blur-3xl opacity-20" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#014935]/10 to-[#327a3b]/20 rounded-full blur-3xl opacity-50" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-[#327a3b]/10 to-[#014935]/20 rounded-full blur-3xl opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -29,7 +31,7 @@ export default function Team() {
             transition={{ type: "spring", stiffness: 200 }}
             className="inline-block mb-4"
           >
-            <span className="text-green-600 font-bold text-sm uppercase tracking-wider bg-green-100 px-4 py-2 rounded-full">
+            <span className="text-[#014935] font-bold text-sm uppercase tracking-wider bg-[#327a3b]/10 px-4 py-2 rounded-full border-2 border-[#327a3b]/20">
               Leadership
             </span>
           </motion.div>
@@ -46,23 +48,43 @@ export default function Team() {
             {
               name: "Alex Johnson",
               role: "President",
-              gradient: "from-green-400 to-emerald-500",
+              gradient: "from-[#014935] to-[#327a3b]",
             },
             {
               name: "Sarah Chen",
               role: "Vice President",
-              gradient: "from-emerald-400 to-teal-500",
+              gradient: "from-[#327a3b] to-[#014935]",
             },
             {
               name: "Mike Davis",
               role: "Technical Lead",
-              gradient: "from-teal-400 to-cyan-500",
+              gradient: "from-[#014935] to-[#327a3b]",
             },
             {
               name: "Emma Wilson",
               role: "Events Coordinator",
-              gradient: "from-cyan-400 to-green-500",
+              gradient: "from-[#327a3b] to-[#014935]",
             },
+            {
+              name: "Alex Johnson",
+              role: "President",
+              gradient: "from-[#014935] to-[#327a3b]",
+            },
+            {
+              name: "Sarah Chen",
+              role: "Vice President",
+              gradient: "from-[#327a3b] to-[#014935]",
+            },
+            {
+              name: "Mike Davis",
+              role: "Technical Lead",
+              gradient: "from-[#014935] to-[#327a3b]",
+            },
+            {
+              name: "Emma Wilson",
+              role: "Events Coordinator",
+              gradient: "from-[#327a3b] to-[#014935]",
+            }
           ].map((member, index) => (
             <motion.div
               key={index}
@@ -81,7 +103,7 @@ export default function Team() {
               }}
               style={{ perspective: 1000 }}
             >
-              <Card className="text-center border-2 border-transparent hover:border-green-300 transition-all group bg-gradient-to-br from-white to-green-50/30 overflow-hidden">
+              <Card className="text-center border-2 border-transparent hover:border-[#327a3b]/30 transition-all group bg-gradient-to-br from-white to-[#014935]/5 overflow-hidden shadow-lg hover:shadow-2xl">
                 <CardHeader className="relative">
                   <div className="relative mx-auto mb-6">
                     <motion.div
@@ -97,7 +119,7 @@ export default function Team() {
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + 0.3 }}
-                      className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center"
+                      className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#327a3b] rounded-full border-4 border-white flex items-center justify-center shadow-lg"
                     >
                       <span className="text-white text-xs font-bold">✓</span>
                     </motion.div>
@@ -115,6 +137,25 @@ export default function Team() {
             </motion.div>
           ))}
         </div>
+
+        {/* View Full Team Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-16"
+        >
+          <Link href="/team">
+            <Button
+              size="lg"
+              className="gradient-green text-white shadow-2xl hover:shadow-3xl transition-all glow-green text-lg px-8 py-6 group"
+            >
+              View Full Team
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "University Computer Club",
+  title: "BAIUST Computer Club",
   description:
     "Join our vibrant community of tech enthusiasts, coders, and innovators",
 };
