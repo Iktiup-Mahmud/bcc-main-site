@@ -1,4 +1,4 @@
-# University Computer Club Website
+# BAIUST Computer Club Website
 
 A modern, dynamic website for a university computer club built with Next.js, TypeScript, and beautiful UI components.
 
