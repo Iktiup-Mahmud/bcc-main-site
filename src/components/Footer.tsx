@@ -56,13 +56,13 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-center md:text-left"
+            className="hidden md:block text-center md:text-left"
           >
             <h3 className="text-xl font-bold mb-4 text-[#327a3b]">
               Quick Links
