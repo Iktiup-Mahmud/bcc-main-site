@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Facebook, Instagram } from "lucide-react";
+import { Mail, Github, Facebook, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
@@ -75,7 +75,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="flex justify-center gap-6"
+            className="flex justify-center gap-6 flex-wrap"
           >
             {[
               {
@@ -95,6 +95,12 @@ export default function Contact() {
                 label: "Instagram",
                 href: "https://instagram.com",
                 color: "from-pink-500 to-purple-600",
+              },
+              {
+                icon: Youtube,
+                label: "YouTube",
+                href: "https://youtube.com",
+                color: "from-red-600 to-red-700",
               },
             ].map((social, index) => (
               <motion.a
